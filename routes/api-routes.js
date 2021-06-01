@@ -1,5 +1,5 @@
 const express = require('express');
-const {nanoid} = require ('nanoid');
+const { nanoid } = require('nanoid');
 const app = express.Router();
 const fs = require('fs');
 const path = require('path');
@@ -36,6 +36,7 @@ app.get('/api/notes', (req, res) => {
             error: err
         }));
 });
+
 app.post('/api/notes', (req, res) => {
     req.body['id'] = nanoid();
     Notes()

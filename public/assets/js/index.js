@@ -1,14 +1,14 @@
 let noteTitle;
 let noteText;
 let saveNoteBtn;
-let newNoteBtn;
+let addNoteBtn;
 let noteList;
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
+  addNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
@@ -61,7 +61,7 @@ const renderActiveNote = () => {
   } else {
     noteTitle.value = '';
     noteText.value = '';
-  }process.env.PORT
+  }
 };
 
 const handleNoteSave = () => {
@@ -172,7 +172,7 @@ const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
-  newNoteBtn.addEventListener('click', handleNewNoteView);
+  addNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
