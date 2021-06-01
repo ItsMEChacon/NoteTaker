@@ -1,4 +1,4 @@
-  
+
   
   > # **Note Taker**
 
@@ -10,8 +10,10 @@
   
   > ## *Description*
       Note Taking app allows you to save small snippets for later use.
-      Working notes![WorkingNotes](https://imgur.com/t6Ejczn)
-      Deleted notes![DeletingNotes](https://imgur.com/QJwvmbe)
+![Working note](https://imgur.com/t6Ejczn)
+
+![Deleted note](https://imgur.com/QJwvmbe)
+
   > ## *Contributing*
       Manuel Chacon
   > ## *Questions* 
