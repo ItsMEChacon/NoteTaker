@@ -16,3 +16,25 @@ const Notes = () => {
         });
     });
 }
+
+function addNote(data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(jsonPath, JSON.stringify(data), 'utf-8', (err) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(true);
+            }
+        });
+    })
+}
+
+app.get('/api/notes', (req, res) => {
+    Notes()
+        .then(notes => res.json(notes))
+        .catch((err) => res.status(500).json({
+            error: err
+        }));
+});
+
+module.exports = app
