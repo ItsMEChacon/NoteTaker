@@ -36,5 +36,26 @@ app.get('/api/notes', (req, res) => {
             error: err
         }));
 });
+app.post('/api/notes', (req, res) => {
+    req.body['id'] = nanoid();
+    Notes()
+        .then(notes => [...notes, req.body])
+        .then(addedNote => addNote(addedNote))
+        .then(isSuccess => res.json({ success: isSuccess }))
+        .catch((err) => res.status(500).json({
+            error: err
+        }));
+})
+
+app.delete('/api/notes/:id', function (req, res) {
+    let id = req.params.id;
+    Notes()
+        .then(notes => notes.filter((note) => note.id !== id))
+        .then(filteredNotes => addNote(filteredNotes))
+        .then(isSuccess => res.json({ success: isSuccess }))
+        .catch((err) => res.status(500).json({
+            error: err
+        }));
+})
 
 module.exports = app
